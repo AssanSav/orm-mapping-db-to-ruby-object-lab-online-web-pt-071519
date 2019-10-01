@@ -54,8 +54,8 @@ class Student
     SELECT * FROM student WHERE name = ?
     LIMIT 1
     SQL
-    #student = DB[:conn].execute(sql, name)
+    DB[:conn].execute(sql, name).map do |row|
     binding.pry
-    student.new_from_db
+    Student.new_from_db(row)
   end
 end
