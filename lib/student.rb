@@ -15,9 +15,7 @@ class Student
     SQL
     DB[:conn].execute(sql).map do |row|
       Student.new_from_db(row)
-      binding.pry
-    # retrieve all the rows from the "Students" database
-    # remember each row should be a new instance of the Student class
+      #binding.pry
     end
   end
 
