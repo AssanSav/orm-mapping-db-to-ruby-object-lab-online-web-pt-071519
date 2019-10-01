@@ -70,7 +70,11 @@ class Student
     end
   end
   
-  def self.first_X_students_in_grade_10
-    
+  def self.first_X_students_in_grade_10(numb)
+    sql = <<-SQL
+    SELECT * FROM students WHERE grade = 10 
+    ORDER BY ?
+    SQL
+    Db
   end
 end
