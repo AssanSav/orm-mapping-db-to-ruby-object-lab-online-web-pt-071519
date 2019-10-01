@@ -56,7 +56,7 @@ class Student
     SQL
     DB[:conn].execute(sql, name).map do |row|
       Student.new_from_db(row)
-      #binding.pry
+      binding.pry
     end
   end
 end
