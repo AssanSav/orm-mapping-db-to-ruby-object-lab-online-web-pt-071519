@@ -2,7 +2,11 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    # create a new Student object given a row from the database
+    student = Student.new
+    student.id = row[0]
+    student.name = row[1]
+    student.grade = row[2]
+    student
   end
 
   def self.all
@@ -39,14 +43,6 @@ class Student
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
-  end
-  
-  def self.new_from_db(row)
-    student = Student.new
-    student.id = row[0]
-    student.name = row[1]
-    student.grade = row[2]
-    student
   end
   
   def self.find_by_name(name)
