@@ -66,5 +66,6 @@ class Student
     SELECT * FROM students WHERE grade <= 11
     SQL
     DB[:conn].execute(sql)
+    binding.pry
   end
 end
