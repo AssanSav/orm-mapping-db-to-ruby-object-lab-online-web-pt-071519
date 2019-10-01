@@ -82,8 +82,7 @@ class Student
   
   def self.first_student_in_grade_10
     sql = <<-SQL
-    SELECT * FROM students WHERE grade = 10 
-    ORDER BY students.id ASC LIMIT 1
+    SELECT * FROM students WHERE grade = 10 ASC LIMIT 1
     SQL
     DB[:conn].execute(sql)
     #binding.pry
